@@ -25,11 +25,9 @@ header{
     flex-direction: row;
     align-items: center;/* centra los links conrespecto al titulo */
     justify-content: space-between;/* dispone el espacio entre el h1 y los links */
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+    /* width: 100%; */
     margin-top: 5px;
+    padding: 10px;
     border: 2px solid black;
     margin-left: 15px;
     margin-right: 15px;
@@ -39,6 +37,8 @@ header{
 }
 
 nav{
+ 
+
     display: flex;/* si o si para hacer el resto */
     gap: 10px;/*  espaciado entre los links */
 }
@@ -87,15 +87,15 @@ h1{
 .caja1{
     font-family: 'Chakra Petch', sans-serif;
    letter-spacing: 1px;
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 50%;
     background-color: rgb(255, 255, 255);
     display: flex;
     border:solid 2px rgb(0, 0, 0);
     border-radius: 30px;
     box-shadow: 7px 7px 3px rgb(0, 0, 0);
     padding: 5px 8px 5px 8px;
-    margin: 20px 400px;
+    margin: 20px;
     /* text-align: center; para centrar el texto de la caja*/
 
 
@@ -121,8 +121,7 @@ main{
     display: flex;
     text-align: center;
     flex-direction: column;
-    padding: 20px;
-    bottom: 50px;
+   
 }
 section a:hover{
     color: black;
@@ -159,24 +158,153 @@ main section{
     animation :down-to-up;
     animation-duration: 2s;
 }
+.boxes{
+width: 100%;
+}
+
+.text-boxes{
+
+}
+
+.grid-boxes{
+    display: grid;
+    grid-template-columns: 150px 200px 1fr;
+    grid-template-rows: 150px 200px 1fr;
+}
+
+.box1{
+background-color: red;
+grid-column: span 2;
+
+}
+.box1 img,.box2 img, .box3 img, .box4 img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+.box2{
+background-color: blue;
+}
+
+.box3{
+    grid-column: span 2;
+}
+
 footer{
     animation: down-to-up;
     animation-duration: 2s;
 
 }
 
-/* Aqui empieza la parte de juegos */
+@media (max-width:768px){
+    header {
+        flex-direction: column;
+        text-align: center;
+        row-gap: 20px;
+    }
+    nav{
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    .grid-boxes{
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+
+/* chatGPT */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item img:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/* Aqui empieza la parte de GAMES */
+nav {
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
 .games div{
     padding: 10px 10px;
     margin: 10px 10px;
    
+    
 }
 .games iframe{
     padding: 20px 20px ;
     width: 400px;
     height: 400px;
 }
-/* Aqui comienza la pestaña Peliculas */
+
+
+.logo img {
+width: 50px;
+height: 50px;
+}
+
+.search {
+display: flex;
+align-items: center;
+}
+
+input[type="text"] {
+background-color: #555;
+border: none;
+border-radius: 5px 0 0 5px;
+padding: 8px;
+color: white;
+}
+
+button {
+background-color: #777;
+border: none;
+border-radius: 0 5px 5px 0;
+padding: 8px;
+}
+
+button img {
+width: 20px;
+height: 20px;
+}
+}
+/* Aqui comienza la pestaña MOVIES */
 .movies{
     padding-left: 400px;
     padding-top: 100px;
